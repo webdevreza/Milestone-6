@@ -8,16 +8,16 @@ const loadData = async (searchKeywords) => {
 };
 function displayPhones(phones) {
   const phonesContainer = document.getElementById("products-container");
-  phonesContainer.textContent="";
+  phonesContainer.textContent = "";
   // display Show all button if there are more than 9 products.
-  const showAllContainer=document.getElementById("show-all-container");
-  if (phones.length>9) {
-   showAllContainer.classList.remove("hidden");
+  const showAllContainer = document.getElementById("show-all-container");
+  if (phones.length > 9) {
+    showAllContainer.classList.remove("hidden");
   } else {
-   showAllContainer.classList.add("hidden");
+    showAllContainer.classList.add("hidden");
   }
-  //display first 9 phones 
-  phones = phones.slice(0,9);
+  //display first 9 phones
+  phones = phones.slice(0, 9);
 
   phones.forEach((phone) => {
     const phoneCard = document.createElement("div");
@@ -35,6 +35,7 @@ function displayPhones(phones) {
       `;
     phonesContainer.appendChild(phoneCard);
   });
+  toggleSpinner(false);
 }
 // loadData("iphone");
 
@@ -42,11 +43,19 @@ function displayPhones(phones) {
 const submitBtn = document.getElementById("submit-btn");
 const searchField = document.getElementById("search-field");
 
-submitBtn.addEventListener("click",function(){
-   const searchText=searchField.value;
-   loadData(searchText);
-   searchField.value="";
-})
+submitBtn.addEventListener("click", function () {
+  const searchText = searchField.value;
+  loadData(searchText);
+  searchField.value = "";
+  toggleSpinner(true);
+});
 
-
-
+// loading-spinner
+const toggleSpinner = (isLoading) => {
+  const loadingSpinner = document.getElementById("loading-spinner");
+  if (isLoading) {
+    loadingSpinner.classList.remove("hidden");
+  } else {
+    loadingSpinner.classList.add("hidden");
+  }
+};

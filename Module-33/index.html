@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #picturs-container,
+      #post-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      #picturs-container img{
+         max-width: 100%;
+      }
+      .post {
+        background-color: orchid;
+        padding: 20px;
+        border-radius: 5px;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- example-1 -->
+    <button onclick="loadData()">Load data in console</button>
+    <!-- example-2 -->
+    <button onclick="loadUsers()">Display Users</button>
+    <h2>Users</h2>
+    <ol id="displayHere">
+      <!-- <li></li> -->
+    </ol>
+    <!-- example-4 -->
+    <button onclick="loadPictures()">Load Pictures</button>
+    <div id="picturs-container">
+    </div>
+    <!-- example-3 -->
+    <h2
+      style="
+        text-align: center;
+        font-size: 2.5rem;
+        border-bottom: 2px solid orchid;
+      "
+    >
+      Our Blogs
+    </h2>
+    <div id="post-container"></div>
+    <!-- script -->
+    <script src="fetch.js"></script>
+    <script src="post.js"></script>
+    <script src="picture.js"></script>
+    <script src="crud.js"></script>
+  </body>
+</html>

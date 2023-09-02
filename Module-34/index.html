@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hot Gadgets</title>
+    <!-- poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- header sec -->
+    <header>
+      <nav class="nav-bar container">
+        <div class="logo">
+          <strong>Hot Gadgets</strong>
+        </div>
+        <button class="btn">Sign Up</button>
+      </nav>
+      <div class="hero container">
+        <div class="hero-texts">
+          <h1>Apple Iphone 13 Pro Max</h1>
+          <p>
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration in some form, by injected
+            humou.
+          </p>
+          <button class="btn">Buy Now</button>
+        </div>
+        <div class="hero-imgs">
+          <img src="img/hero-2.png" alt="Phone" />
+          <img src="img/hero-1.png" alt="Phone" />
+          <img src="img/hero-3.png" alt="Phone" />
+        </div>
+      </div>
+    </header>
+    <!-- main sec -->
+    <main>
+      <section class="search">
+        <h2>Search your phone</h2>
+        <div class="search-wrapper">
+          <div class="search-icon">
+            <!-- You can use an SVG or Font Awesome icon here -->
+            <i class="fa fa-search"></i>
+          </div>
+          <input id="search-field" type="search" placeholder="Search your phone" class="search-input" />
+          <button id="submit-btn" type="submit" class="search-btn btn">Search</button>
+        </div>
+      </section>
+      <section>
+         <div class="products-section container" id="products-container">
+            <!-- <div class="product-card">
+               <div class="product-img">
+                  <img src="img/phone-1.png" alt="phone">
+               </div>
+               <div class="product-info">
+                  <h3>Iphone 13 Pro Max</h3>
+                  <p>There are many variations of passages of available, but the majority have suffered</p>
+                  <strong>$999</strong>
+                  <button class="btn ">Show Details</button>
+               </div>
+            </div>  -->
+         </div>
+         <div id="show-all-container" class="hidden">
+            <button class="btn">Show All</button>
+         </div>
+      </section>
+    </main>
+    <!-- footer -->
+    <footer>
+      <p class="copyright">
+         &copy; Copyright Rezaul karim.
+      </p>
+    </footer>
+
+    <!-- scripts -->
+    <script src="script.js"></script>
+  </body>
+</html>

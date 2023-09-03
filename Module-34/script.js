@@ -30,14 +30,14 @@ function displayPhones(phones) {
             <h3>${phone.phone_name}</h3>
             <p>There are many variations of passages of available, but the majority have suffered</p>
             <strong>$999</strong>
-            <button class="btn ">Show Details</button>
+            <button onclick="loadPhoneDetails('${phone.slug}')" class="btn">Show Details</button>
          </div>
       `;
     phonesContainer.appendChild(phoneCard);
   });
   toggleSpinner(false);
 }
-// loadData("iphone");
+loadData("iphone");
 
 // search Products
 const submitBtn = document.getElementById("submit-btn");
@@ -59,25 +59,37 @@ const toggleSpinner = (isLoading) => {
     loadingSpinner.classList.add("hidden");
   }
 };
+// modal
+const modalContainer = document.getElementById("product-modal");
+const closeModalBtn = document.getElementById("close-modal");
 
-const dreamGirl = [
-  {
-    sokina: {
-      name: "bbu",
-      height: "5.4",
-      family: [{ father: "rock", mother: "shila", sister: "chinki" }],
-      age: undefined,
-      contactInfo: [
-        {
-          facebook: {
-            link: "https://www.facebook.com/",
-            followers: "12545",
-            status: "single",
-            friendsList: [{ name: "rofik" }, undefined],
-          },
-        },
-        { instagram: "https://www.instagram.com/" },
-      ],
-    },
-  },
-];
+const loadPhoneDetails = async (phoneId) => {
+  const phoneDetailsApi = await fetch(
+    `https://openapi.programming-hero.com/api/phone/${phoneId}`
+  );
+  const response = await phoneDetailsApi.json();
+  const data = response.data;
+  openModal(data);
+};
+const openModal = (phoneDetails) => {
+  modalContainer.classList.remove("hidden");
+  modalContainer.innerHTML = `
+    <div class="modal-img">
+      <img src="${phoneDetails.image}" alt="Phone" />
+    </div>
+    <div class="modal-info">
+      <h3>${phoneDetails.name}</h3>
+      <ul>
+        <li><strong>Storage :</strong>${phoneDetails.mainFeatures.storage}</li>
+        <li><strong>Display Size :</strong>${phoneDetails.mainFeatures.displaySize}</li>
+      </ul>
+      <div class="close-area">
+        <button onclick="closeModal()" id="close-modal" class="close-btn btn">Close</button>
+      </div>
+    </div>
+  `;
+};
+
+const closeModal = () => {
+  modalContainer.classList.add("hidden");
+};

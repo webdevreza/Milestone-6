@@ -14,6 +14,7 @@ body {
 
 .btn {
   display: inline-block;
+  text-decoration: none;
   border: none;
   padding: 12px 24px;
   background-color: #0e63e2;
@@ -21,6 +22,7 @@ body {
   border-radius: 5px;
   font-size: 16px;
   font-weight: 600;
+  cursor: pointer;
 }
 .container {
   max-width: 1200px;
@@ -201,9 +203,56 @@ header {
   }
 }
 
-
-
-
+/* Modal */
+.modal-card{
+  max-width: 450px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #00000020;
+}
+.modal-card .modal-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(13, 110, 253, 0.1);
+  border-radius: 8px;
+  padding: 20px 0;
+}
+.modal-card .modal-img img{
+  max-width: 100%;
+}
+.modal-card .modal-info{
+  padding-top: 30px;
+}
+.modal-card .modal-info h3{
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+.modal-card .modal-info p{
+  margin-bottom: 16px;
+  color: #706F6F;
+}
+.modal-card .modal-info ul{
+  list-style: none;
+}
+.modal-card .modal-info ul li{
+  margin-bottom: 10px;
+  color: #706F6F;
+}
+.modal-card .modal-info ul li strong{
+  color: #000;
+}
+.modal-card .modal-info .close-area{
+  text-align: end;
+}
+.close-btn{
+  background-color: crimson;
+}
 
 
 

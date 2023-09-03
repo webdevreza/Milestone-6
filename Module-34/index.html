@@ -37,7 +37,7 @@
             the majority have suffered alteration in some form, by injected
             humou.
           </p>
-          <button class="btn">Buy Now</button>
+          <a href="#products"  class="btn">Buy Now</a>
         </div>
         <div class="hero-imgs">
           <img src="img/hero-2.png" alt="Phone" />
@@ -55,16 +55,23 @@
             <!-- You can use an SVG or Font Awesome icon here -->
             <i class="fa fa-search"></i>
           </div>
-          <input id="search-field" type="search" placeholder="Search your phone" class="search-input" />
-          <button id="submit-btn" type="submit" class="search-btn btn">Search</button>
+          <input
+            id="search-field"
+            type="search"
+            placeholder="Search your phone"
+            class="search-input"
+          />
+          <button id="submit-btn" type="submit" class="search-btn btn">
+            Search
+          </button>
         </div>
         <div id="loading-spinner" class="hidden">
-         <div class="lds-dual-ring"></div>
+          <div class="lds-dual-ring"></div>
         </div>
       </section>
-      <section>
-         <div class="products-section container" id="products-container">
-            <!-- <div class="product-card">
+      <section id="products">
+        <div class="products-section container" id="products-container">
+          <!-- <div class="product-card">
                <div class="product-img">
                   <img src="img/phone-1.png" alt="phone">
                </div>
@@ -75,17 +82,39 @@
                   <button class="btn ">Show Details</button>
                </div>
             </div>  -->
-         </div>
-         <div id="show-all-container" class="hidden">
-            <button id="show" class="btn">Show All</button>
-         </div>
+        </div>
+        <!-- Show All button -->
+        <div id="show-all-container" class="hidden">
+          <button id="show" class="btn">Show All</button>
+        </div>
+        <!-- Modal -->
+        <div id="product-modal" class="modal-card hidden">
+          <!-- <div class="modal-img">
+            <img src="img/phone-1.png" alt="Phone" />
+          </div>
+          <div class="modal-info">
+            <h3>Iphone 13 Pro Max</h3>
+            <p>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout.
+            </p>
+            <ul>
+              <li>
+                <strong>Storage :</strong> 128GB/256GB/1TB Storage, No card slot
+              </li>
+              <li><strong>Display Size :</strong> 6.7 Inches, 109.8 cm</li>
+            </ul>
+            <div class="close-area">
+              <button onclick="closeModal()" id="close-modal" class="close-btn btn">Close</button>
+            </div>
+          </div> -->
+        </div>
+        
       </section>
     </main>
     <!-- footer -->
     <footer>
-      <p class="copyright">
-         &copy; Copyright Rezaul karim.
-      </p>
+      <p class="copyright">&copy; Copyright Rezaul karim.</p>
     </footer>
 
     <!-- scripts -->
